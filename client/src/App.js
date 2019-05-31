@@ -8,6 +8,7 @@ class App extends React.Component {
     return (
       <Router>
         <h1>App</h1>
+        <Route exact path='/' component = {Landing}/>
       </Router>
     );
   }
