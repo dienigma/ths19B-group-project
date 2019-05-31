@@ -6,43 +6,45 @@ const profileSchema = new Schema({
     type:Schema.Types.ObjectId,
     ref: 'users'
   },
+  avatar : {
+    type: String
+  },
   bio:{
     type:String
   },
   location:{
     type: String,
   },
-  skills:{
-    type:[String],
-    required: true,
+  progress: {
+    type : Number
   },
-  experience : {
-    title:{
-      type: String,
-      required : true
-    },
-    company:{
-      type:String,
-      required: true
-    }
-  },
-  education : {
-    school:{
-      type: String,
-      required : true
-    },
-    degree:{
-      type:String,
-      required: true
-    },
-    fieldofstudy:{
-      type:String
-    },
-    current : {
-      type: Boolean,
-      Default: false
-    },
-  },
+  // experience : {
+  //   title:{
+  //     type: String,
+  //     required : true
+  //   },
+  //   company:{
+  //     type:String,
+  //     required: true
+  //   }
+  // },
+  // education : {
+  //   school:{
+  //     type: String,
+  //     required : true
+  //   },
+  //   degree:{
+  //     type:String,
+  //     required: true
+  //   },
+  //   fieldofstudy:{
+  //     type:String
+  //   },
+  //   current : {
+  //     type: Boolean,
+  //     Default: false
+  //   },
+  // },
   social: {
     twitter :{
       type: String ,
@@ -58,7 +60,6 @@ const profileSchema = new Schema({
     type: Date,
     default: Date.now
   }
-
 });
 
 const Profile = mongooose.model("Profile", profileSchema);
