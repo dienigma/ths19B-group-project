@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // express routes middleware
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 app.use('/user/profile', profileRouter);
 
 // catch 404 and forward to error handler

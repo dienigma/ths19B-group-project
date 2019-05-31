@@ -4,7 +4,7 @@ const User = require('../models/Users')
 
 /* GET users listing. */
 router.get('/test', (req, res) => {
-  res.send('respond with a resource');
+  res.send('users are working');
 });
 
 //@route POST user/auth/register
@@ -12,13 +12,17 @@ router.get('/test', (req, res) => {
 //@access Public
 
 router.post('/auth/register', (req,res)=> {
+  console.log(req.body.name)
   const newUser = new User({
       name : req.body.name,
       email: req.body.email,
       password : req.body.password
   })
+  //console.log(newUser)
   User.create((newUser))
-  .then(user => res.json(user))
+  .then((user) => {
+    console.log(user) 
+    res.json(user)})
   .catch(err => res.send(err))
   // User.save((err) => {res.json({msg:"Error in saving a user"})
   // })

@@ -2,13 +2,12 @@ const mongoose = require("mongoose");
 
 const courseSchema = new mongoose.Schema({
   name: {
-    type:String,
+    type: String,
   },
   description: {
-    type:String
+    type: String
   },
 
-  
 });
 
 const Course = mongooose.model("Course", courseSchema);
