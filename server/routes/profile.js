@@ -14,7 +14,7 @@ router.get('/test',(req,res)=> {
 //@access Private
 
 router.get('/:name', (req,res) => {
-    Profile.findById(req,user.id)
+    Profile.findById(req.user.id)
     .then((profile) => res.status(200).json(profile))
     .catch(err => res.json(err))
 })

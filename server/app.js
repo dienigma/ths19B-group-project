@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
 // Import routes
 const indexRouter = require('./routes/index');
@@ -30,6 +31,13 @@ app.use('/user/profile', profileRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+mongoose.connect(
+  "mongodb+srv://dienigma:Cmj2018!@testclusterone-umiol.mongodb.net/test?retryWrites=true",
+  { useNewUrlParser: true }
+)
+.then(()=> {console.log("MongoDB is connected")})
+.catch((err)=> {console.log(err)} )
 
 // error handler
 app.use(function(err, req, res, next) {
