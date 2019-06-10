@@ -32,6 +32,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+//DB Connection
 mongoose.connect(
   "mongodb+srv://dienigma:Cmj2018!@testclusterone-umiol.mongodb.net/test?retryWrites=true",
   { useNewUrlParser: true }
